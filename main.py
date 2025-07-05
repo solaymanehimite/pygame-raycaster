@@ -1,9 +1,12 @@
-import pygame, sys
+import pygame
+import sys
 from pygame.locals import *
-from settings import *
-from map import *
-from player import *
-from raycaster import *
+
+from src.settings import *
+from src.map import *
+from src.player import *
+from src.raycaster import *
+
 
 class game:
 
@@ -28,7 +31,7 @@ class game:
         self.tp += 1
 
     def draw(self):
-        self.screen.fill((0,0,0))
+        self.screen.fill((0, 0, 0))
         self.raycaster.update()
         self.map.draw()
         self.player.draw()
@@ -44,5 +47,6 @@ class game:
             self.check_events()
             self.update()
             self.draw()
+
 
 game().run()

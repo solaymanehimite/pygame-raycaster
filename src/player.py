@@ -1,7 +1,9 @@
+import math
 import pygame
 from pygame.locals import *
-from settings import *
-import math
+
+from src.settings import *
+
 
 class player:
 
@@ -20,7 +22,7 @@ class player:
 
         mouse_rel = pygame.mouse.get_rel()
         if self.game.tp % 2 == 0:
-            pygame.mouse.set_pos(320,320)
+            pygame.mouse.set_pos(320, 320)
         pygame.mouse.set_visible(False)
 
         keys = pygame.key.get_pressed()
@@ -53,7 +55,8 @@ class player:
             self.y += dy
 
     def draw(self):
-        pygame.draw.circle(self.game.screen, (255,0,0), (self.x * 10 + 20, self.y * 10 + 20), 3)
+        pygame.draw.circle(self.game.screen, (255, 0, 0),
+                           (self.x * 10 + 20, self.y * 10 + 20), 3)
 
     def update(self):
         self.movement()
